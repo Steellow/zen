@@ -10,7 +10,7 @@ abstract class Styles {
   static const TextStyle floatingButtonTextStyle = TextStyle(
     color: Colors.white,
     fontSize: 18,
-    letterSpacing: 4,
+    letterSpacing: 6,
     shadows: [smallTextShadow],
   );
 
@@ -23,7 +23,7 @@ abstract class Styles {
   static const Shadow smallTextShadow = Shadow(
     blurRadius: 4,
     offset: Offset(2, 2),
-    color: Colors.black38,
+    color: Colors.black26,
   );
 
   static ThemeData myThemeData = ThemeData(

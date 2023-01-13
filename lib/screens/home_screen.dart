@@ -1,4 +1,6 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:zen_app/screens/in_progress_screen.dart';
 import 'package:zen_app/util/styles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -48,17 +50,31 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
-        label: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Text(
-            "Let's go!",
-            style: Styles.floatingButtonTextStyle,
-          ),
-        ),
-      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: OpenContainer(
+        closedBuilder: (BuildContext ctx, VoidCallback openContainer) {
+          // Animation doesn't look smooth with FloatingActionButton widget
+          return const SizedBox(
+            height: 50,
+            width: 180,
+            child: Center(
+              child: Text(
+                "START",
+                style: Styles.floatingButtonTextStyle,
+              ),
+            ),
+          );
+        },
+        closedShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(99),
+        ),
+        closedColor: Styles.buttonColor,
+        openColor: Styles.buttonColor,
+        closedElevation: 6,
+        openBuilder: (BuildContext ctx, VoidCallback _) {
+          return const InProgressScreen();
+        },
+      ),
     );
   }
 }
