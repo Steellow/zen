@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
               ),
               child: Image.asset('assets/meditation-girl.png'),
             ),
-            const Text(
+            Text(
               "Good morning!", // TODO: Dynamic hello message
               style: Styles.titleText,
             ),

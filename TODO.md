@@ -6,3 +6,7 @@
 - Beep when emditation done
 - Visual indicator when meditation done
 - Cancel meditation
+- Dough?
+- Move confetti to seperate file
+- Settings: disable confetti
+- Circle moves a bit when meditation is completed

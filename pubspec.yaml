@@ -25,6 +25,7 @@ environment:
 dependencies:
     animations: ^2.0.7
     circular_countdown_timer: ^0.2.3
+    confetti: ^0.7.0
     cupertino_icons: ^1.0.2
     flutter:
         sdk: flutter

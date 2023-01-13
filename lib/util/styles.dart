@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 abstract class Styles {
-  static const TextStyle titleText = TextStyle(
+  static TextStyle titleText = titleTextWithoutShadow.copyWith(
+    shadows: [bigTextShadow],
+  );
+
+  static const TextStyle titleTextWithoutShadow = TextStyle(
     fontSize: 28,
     fontWeight: FontWeight.bold,
-    shadows: [bigTextShadow],
   );
 
   static const TextStyle basicText = TextStyle(
