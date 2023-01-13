@@ -1,0 +1,8 @@
+- Levitate easter egg
+- Intro screens
+- Change min/max time
+- Settings screen
+- Pause meditation
+- Beep when emditation done
+- Visual indicator when meditation done
+- Cancel meditation

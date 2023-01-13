@@ -43,9 +43,6 @@ class HomeScreen extends StatelessWidget {
             ),
             const Text(
               "Meditation from 10 to 20 minutes", // TODO: Dynamic text
-              style: TextStyle(
-                shadows: [Styles.smallTextShadow],
-              ),
             ),
           ],
         ),
@@ -59,7 +56,7 @@ class HomeScreen extends StatelessWidget {
             width: 180,
             child: Center(
               child: Text(
-                "START",
+                "MEDITATE", // TODO: 69 streak = "LEVITATE"
                 style: Styles.floatingButtonTextStyle,
               ),
             ),

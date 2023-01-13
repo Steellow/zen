@@ -7,8 +7,13 @@ abstract class Styles {
     shadows: [bigTextShadow],
   );
 
+  static const TextStyle basicText = TextStyle(
+    shadows: [smallTextShadow],
+  );
+
   static const TextStyle floatingButtonTextStyle = TextStyle(
     color: Colors.white,
+    fontWeight: FontWeight.w500,
     fontSize: 18,
     letterSpacing: 6,
     shadows: [smallTextShadow],
@@ -16,21 +21,20 @@ abstract class Styles {
 
   static const Shadow bigTextShadow = Shadow(
     blurRadius: 10,
-    offset: Offset(5, 5),
+    offset: Offset(0, 5),
     color: Colors.black38,
   );
 
   static const Shadow smallTextShadow = Shadow(
-    blurRadius: 4,
-    offset: Offset(2, 2),
-    color: Colors.black26,
+    blurRadius: 6,
+    offset: Offset(0, 2),
+    color: Colors.black54,
   );
 
   static ThemeData myThemeData = ThemeData(
     brightness: Brightness.dark,
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: buttonColor,
-      // extendedTextStyle doesn't work for some reason. Check floatingButtonTextStyle
+    textTheme: const TextTheme(
+      bodyText2: basicText,
     ),
   );
 
