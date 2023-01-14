@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zen_app/screens/home_screen.dart';
+import 'package:zen_app/home_screen/home_screen.dart';
 import 'package:zen_app/util/styles.dart';
 
 void main() {
