@@ -10,3 +10,5 @@
 - Move confetti to seperate file
 - Settings: disable confetti
 - Circle moves a bit when meditation is completed
+- Dynamic hello message
+- Dynamic "meditation from..." message
