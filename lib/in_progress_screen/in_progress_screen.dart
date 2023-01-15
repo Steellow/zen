@@ -1,8 +1,9 @@
-import 'dart:math';
-
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
+import 'package:zen_app/in_progress_screen/confetti_from_top.dart';
+import 'package:zen_app/in_progress_screen/countdown_timer.dart';
+import 'package:zen_app/in_progress_screen/meditation_timer.dart';
 import 'package:zen_app/util/styles.dart';
 
 class InProgressScreen extends StatefulWidget {
@@ -70,47 +71,19 @@ class _InProgressScreenState extends State<InProgressScreen> {
                   Stack(
                     children: [
                       // Meditation timer
-                      CircularCountDownTimer(
-                        // Styling
-                        width: circleSize,
-                        height: circleSize,
-                        ringColor: Styles.buttonColor,
-                        fillColor: Colors.white,
-                        strokeWidth: 10,
-                        textStyle: Styles.titleText,
-                        strokeCap: StrokeCap.round,
-
-                        // Function
-                        controller: meditationController,
-                        duration: 3,
-                        autoStart: false,
-                        isTimerTextShown: onGoing,
+                      MeditationTimer(
+                        size: circleSize,
                         onComplete: completeMeditation,
+                        controller: meditationController,
+                        onGoing: onGoing,
                       ),
 
                       // Countdown timer
-                      Visibility(
-                        visible: !onGoing,
-                        child: CircularCountDownTimer(
-                          // Styling
-                          width: circleSize,
-                          height: circleSize,
-                          ringColor: Styles.buttonColor,
-                          fillColor: Colors.red,
-                          strokeWidth: 10,
-                          textStyle: Styles.titleText.copyWith(
-                            color: Colors.red,
-                          ),
-                          strokeCap: StrokeCap.round,
-                          isReverseAnimation: true,
-
-                          // Function
-                          autoStart: true,
-                          isReverse: true,
-                          duration: 4,
-                          controller: countdownController,
-                          onComplete: startMeditation,
-                        ),
+                      CountdownTimer(
+                        size: circleSize,
+                        controller: countdownController,
+                        onComplete: startMeditation,
+                        onGoing: onGoing,
                       ),
                     ],
                   ),
@@ -128,22 +101,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.topCenter,
-            child: ConfettiWidget(
-              confettiController: confettiController,
-              shouldLoop: true,
-              canvas: Size.infinite,
-
-              // Styling
-              blastDirection: pi / 2, // Top to bottom
-              numberOfParticles: 10,
-              minBlastForce: 1,
-              maxBlastForce: 10,
-              gravity: 0.09,
-              // emissionFrequency: 0.03,
-            ),
-          ),
+          ConfettiFromTop(confettiController: confettiController),
         ],
       ),
     );
