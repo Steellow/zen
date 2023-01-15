@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zen_app/home_screen/custom_fab.dart';
-import 'package:zen_app/home_screen/meditation_time_select_dialog.dart';
+import 'package:zen_app/select_meditation_time_dialog/meditation_time_select_dialog.dart';
 import 'package:zen_app/util/styles.dart';
 
 class HomeScreen extends StatelessWidget {
