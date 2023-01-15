@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinbox/material.dart';
 
 class MeditationTimePicker extends StatefulWidget {
-  double value;
-  Function(double) onChanged;
+  final double value;
+  final Function(double) onChanged;
   final String label;
 
-  MeditationTimePicker(
+  const MeditationTimePicker(
       {super.key,
       required this.value,
       required this.onChanged,

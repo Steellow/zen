@@ -1,6 +1,5 @@
 - Levitate easter egg
 - Intro screens
-- Change min/max time
 - Settings screen
 - Pause meditation
 - Beep when emditation done
@@ -13,3 +12,4 @@
 - Dynamic hello message
 - Dynamic "meditation from..." message
 - Color scheme kondikseen!
+- Stats screen

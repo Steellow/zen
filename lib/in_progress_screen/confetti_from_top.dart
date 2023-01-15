@@ -4,9 +4,9 @@ import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 
 class ConfettiFromTop extends StatelessWidget {
-  ConfettiController confettiController;
+  final ConfettiController confettiController;
 
-  ConfettiFromTop({super.key, required this.confettiController});
+  const ConfettiFromTop({super.key, required this.confettiController});
 
   @override
   Widget build(BuildContext context) {

@@ -12,8 +12,8 @@ const String BOX_KEY_MAX_MEDITAION_TIME = "maxMeditationTime";
 double getMeditationTimeInSeconds() {
   var box = Hive.box(BOX_NAME_MEDITATION_TIME);
 
-  double minTime = box.get(BOX_KEY_MIN_MEDITAION_TIME, defaultValue: 10.0) * 2;
-  double maxTime = box.get(BOX_KEY_MAX_MEDITAION_TIME, defaultValue: 20.0) * 2;
+  double minTime = box.get(BOX_KEY_MIN_MEDITAION_TIME, defaultValue: 10.0) * 60;
+  double maxTime = box.get(BOX_KEY_MAX_MEDITAION_TIME, defaultValue: 20.0) * 60;
 
   double random = randomBetween(minTime, maxTime);
   print('Generated random value of $random');
