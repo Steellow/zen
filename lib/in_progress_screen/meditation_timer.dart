@@ -7,6 +7,7 @@ class MeditationTimer extends StatelessWidget {
   final CountDownController controller;
   final Function()? onComplete;
   final bool onGoing;
+  final double time;
 
   const MeditationTimer({
     super.key,
@@ -14,6 +15,7 @@ class MeditationTimer extends StatelessWidget {
     required this.onComplete,
     required this.controller,
     required this.onGoing,
+    required this.time,
   });
 
   @override
@@ -30,7 +32,7 @@ class MeditationTimer extends StatelessWidget {
 
       // Function
       controller: controller,
-      duration: 3,
+      duration: time.round(),
       autoStart: false,
       isTimerTextShown: onGoing,
       onComplete: onComplete,

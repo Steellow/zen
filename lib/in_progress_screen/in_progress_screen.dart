@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:zen_app/in_progress_screen/confetti_from_top.dart';
 import 'package:zen_app/in_progress_screen/countdown_timer.dart';
 import 'package:zen_app/in_progress_screen/meditation_timer.dart';
+import 'package:zen_app/util/hive_helper.dart';
 import 'package:zen_app/util/styles.dart';
 
 class InProgressScreen extends StatefulWidget {
@@ -14,20 +15,23 @@ class InProgressScreen extends StatefulWidget {
 }
 
 class _InProgressScreenState extends State<InProgressScreen> {
+  // Settings
   final double circleSize = 150;
-
   int countdownBeforeMeditation = DateTime.now().millisecondsSinceEpoch + 4000;
 
+  // Setup
   bool onGoing = false;
   bool complete = false;
+  late double meditationTime;
 
+// Controllers
   CountDownController countdownController = CountDownController();
   CountDownController meditationController = CountDownController();
-
   late ConfettiController confettiController;
 
   @override
   void initState() {
+    meditationTime = getMeditationTimeInSeconds();
     confettiController = ConfettiController(
       duration: const Duration(minutes: 1),
     );
@@ -76,6 +80,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
                         onComplete: completeMeditation,
                         controller: meditationController,
                         onGoing: onGoing,
+                        time: meditationTime,
                       ),
 
                       // Countdown timer
