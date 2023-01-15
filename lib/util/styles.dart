@@ -22,6 +22,11 @@ abstract class Styles {
     shadows: [smallTextShadow],
   );
 
+  static const TextStyle numberPickerTextStyle = TextStyle(
+    color: buttonColor,
+    fontSize: 30,
+  );
+
   static const Shadow bigTextShadow = Shadow(
     blurRadius: 10,
     offset: Offset(0, 5),

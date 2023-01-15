@@ -12,3 +12,4 @@
 - Circle moves a bit when meditation is completed
 - Dynamic hello message
 - Dynamic "meditation from..." message
+- Color scheme kondikseen!

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zen_app/home_screen/custom_fab.dart';
+import 'package:zen_app/home_screen/meditation_time_select_dialog.dart';
 import 'package:zen_app/util/styles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,14 +14,17 @@ class HomeScreen extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                IconButton(
+              children: [
+                const IconButton(
                   onPressed: null,
                   icon: Icon(Icons.settings),
                 ),
                 IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.timer),
+                  icon: const Icon(
+                    Icons.timer,
+                    color: Colors.white38,
+                  ),
+                  onPressed: () => showMeditationTimeSelectDialog(context),
                 ),
               ],
             ),
