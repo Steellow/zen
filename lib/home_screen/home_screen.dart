@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zen_app/home_screen/custom_fab.dart';
 import 'package:zen_app/select_meditation_time_dialog/meditation_time_select_dialog.dart';
+import 'package:zen_app/settings_screen/setting_screen.dart';
+import 'package:zen_app/util/slide_from_left_route.dart';
 import 'package:zen_app/util/styles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,9 +17,13 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.settings),
+                IconButton(
+                  icon: const Icon(
+                    Icons.settings,
+                    color: Colors.white38,
+                  ),
+                  onPressed: () => Navigator.of(context)
+                      .push(slideFromLeftRoute(const SettingsScreen())),
                 ),
                 IconButton(
                   icon: const Icon(

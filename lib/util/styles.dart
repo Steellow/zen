@@ -27,6 +27,12 @@ abstract class Styles {
     fontSize: 30,
   );
 
+  static const TextStyle settingsSubtitle = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    letterSpacing: 2,
+  );
+
   static const Shadow bigTextShadow = Shadow(
     blurRadius: 10,
     offset: Offset(0, 5),

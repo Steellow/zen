@@ -1,14 +1,11 @@
-- Intro screens
-- Settings screen
 - Pause meditation
   - Back button to pause, press again to cancel?
 - Cancel meditation
-- Dough?
-- Move confetti to seperate file
-- Settings: disable confetti
 - Circle moves a bit when meditation is completed
 - Dynamic hello message
 - Dynamic "meditation from..." message
 - Color scheme kondikseen!
 - Stats screen
 - Great job! text fixed height
+- Intro screens
+- Makes settings actually work
