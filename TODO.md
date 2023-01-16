@@ -1,9 +1,7 @@
-- Levitate easter egg
 - Intro screens
 - Settings screen
 - Pause meditation
-- Beep when emditation done
-- Visual indicator when meditation done
+  - Back button to pause, press again to cancel?
 - Cancel meditation
 - Dough?
 - Move confetti to seperate file
@@ -13,3 +11,4 @@
 - Dynamic "meditation from..." message
 - Color scheme kondikseen!
 - Stats screen
+- Great job! text fixed height

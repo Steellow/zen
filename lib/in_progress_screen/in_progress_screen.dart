@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,11 @@ class _InProgressScreenState extends State<InProgressScreen> {
       complete = true;
       confettiController.play();
     });
+    playSoundEffect();
   }
+
+  void playSoundEffect() =>
+      AudioPlayer().play(AssetSource("sound-effect.wav"), volume: 1);
 
   @override
   Widget build(BuildContext context) {
