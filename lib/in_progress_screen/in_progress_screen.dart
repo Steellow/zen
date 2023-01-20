@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:zen_app/in_progress_screen/confetti_from_top.dart';
 import 'package:zen_app/in_progress_screen/countdown_timer.dart';
 import 'package:zen_app/in_progress_screen/meditation_timer.dart';
+import 'package:zen_app/in_progress_screen/press_to_pause_text.dart';
 import 'package:zen_app/util/hive_helper.dart';
 import 'package:zen_app/util/styles.dart';
 
@@ -72,41 +73,53 @@ class _InProgressScreenState extends State<InProgressScreen> {
           SafeArea(
             child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Using the same CircularCountDownTimer to count down when meditation starts.
-                  // No circle is shown here, but it asserts it's the same size & styling.
-                  // Also keeps everything simple.
-                  Stack(
-                    children: [
-                      // Meditation timer
-                      MeditationTimer(
-                        size: circleSize,
-                        onComplete: completeMeditation,
-                        controller: meditationController,
-                        onGoing: onGoing,
-                        time: meditationTime,
-                      ),
+                  // Empty container to make alignment work
+                  Container(height: 1),
 
-                      // Countdown timer
-                      CountdownTimer(
-                        size: circleSize,
-                        controller: countdownController,
-                        onComplete: startMeditation,
-                        onGoing: onGoing,
+                  // Main content of the screen
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Stack(
+                        children: [
+                          // Meditation timer
+                          MeditationTimer(
+                            size: circleSize,
+                            onComplete: completeMeditation,
+                            controller: meditationController,
+                            onGoing: onGoing,
+                            time: meditationTime,
+                          ),
+
+                          // Using the same CircularCountDownTimer to count down when meditation starts.
+                          // No circle is shown here, but it asserts it's the same size & styling.
+                          // Also keeps everything simple.
+
+                          // Countdown timer
+                          CountdownTimer(
+                            size: circleSize,
+                            controller: countdownController,
+                            onComplete: startMeditation,
+                            onGoing: onGoing,
+                          ),
+                        ],
+                      ),
+                      Container(height: 20),
+                      Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 36),
+                        child: Text(
+                          complete
+                              ? "Great job! 🥳\nYou can continue meditating if you feel like it."
+                              : 'Now power off the screen and chill ${onGoing ? "😌" : "🙂"}',
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ],
                   ),
-                  Container(height: 20),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 36),
-                    child: Text(
-                      complete
-                          ? "Great job! 🥳\nYou can continue meditating if you feel like it."
-                          : 'Now power off the screen and chill ${onGoing ? "😌" : "🙂"}',
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
+
+                  const PressToPauseText(),
                 ],
               ),
             ),
