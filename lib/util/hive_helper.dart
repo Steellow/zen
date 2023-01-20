@@ -30,5 +30,5 @@ double getMeditationTimeInSeconds() {
 
 const String BOX_NAME_QUICK_STATS = "quickStatsBox";
 
-const String BOX_KEY_TOTAL_MINUTES_MEDITATED = "totalMinutesMeditated";
+const String BOX_KEY_TOTAL_SECONDS_MEDITATED = "totalSecondsMeditated";
 const String BOX_KEY_TOTAL_TIMES_MEDITATED = "totalTimesMeditated";

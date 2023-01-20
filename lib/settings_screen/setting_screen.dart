@@ -16,20 +16,20 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        children: const [
-          SettingsSubtitle(text: "Stats"),
+        children: [
+          const SettingsSubtitle(text: "Stats"),
           TotalTimeTile(),
           TimesMeditatedTile(),
-          AverageLengthTile(),
+          const AverageLengthTile(),
           //
-          SettingsSubtitle(text: "Settings"),
-          MeditationTimeTile(),
-          DisableConfettiTile(),
-          ResetStatsTile(),
+          const SettingsSubtitle(text: "Settings"),
+          const MeditationTimeTile(),
+          const DisableConfettiTile(),
+          const ResetStatsTile(),
           //
-          SettingsSubtitle(text: "Other"),
-          RateAppTile(),
-          SourceCodeTile(),
+          const SettingsSubtitle(text: "Other"),
+          const RateAppTile(),
+          const SourceCodeTile(),
         ],
       ),
     );
