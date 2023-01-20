@@ -13,7 +13,7 @@ class PressToPauseText extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.only(bottom: 8),
         child: const Text(
-          "PRESS BACK TO PAUSE",
+          'PRESS BACK TO PAUSE',
           style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,

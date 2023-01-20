@@ -27,7 +27,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
   late double meditationTime;
 
   // State
-  bool onGoing = false;
+  bool hasStarted = false;
   bool complete = false;
   bool paused = false;
 
@@ -53,7 +53,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
 
   void startMeditation() {
     setState(() {
-      onGoing = true;
+      hasStarted = true;
       meditationController.start();
     });
   }
@@ -83,7 +83,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
       AudioPlayer().play(AssetSource("sound-effect.wav"), volume: 1);
 
   Future<bool> onWillPop() {
-    if (paused || !onGoing || complete) {
+    if (paused || !hasStarted || complete) {
       return Future<bool>.value(true);
     }
 
@@ -125,7 +125,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
                               size: circleSize,
                               onComplete: completeMeditation,
                               controller: meditationController,
-                              onGoing: onGoing,
+                              onGoing: hasStarted,
                               time: meditationTime,
                             ),
 
@@ -138,12 +138,12 @@ class _InProgressScreenState extends State<InProgressScreen> {
                               size: circleSize,
                               controller: countdownController,
                               onComplete: startMeditation,
-                              onGoing: onGoing,
+                              onGoing: hasStarted,
                             ),
                           ],
                         ),
                         Container(height: 20),
-                        StateText(complete: complete, onGoing: onGoing),
+                        StateText(complete: complete, onGoing: hasStarted),
                       ],
                     ),
 
@@ -157,7 +157,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
                     ),
 
                     PressToPauseText(
-                      visible: !complete,
+                      visible: hasStarted && !complete,
                     ),
                   ],
                 ),
