@@ -1,7 +1,3 @@
-- Pause meditation
-  - Back button to pause, press again to cancel?
-- Cancel meditation
-- Dynamic hello message
 - Dynamic "meditation from..." message
 - Color scheme kondikseen!
 - Great job! text fixed height
