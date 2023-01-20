@@ -1,5 +1,3 @@
-- Dynamic "meditation from..." message
 - Color scheme kondikseen!
-- Great job! text fixed height
 - Intro screens
 - Makes settings actually work

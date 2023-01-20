@@ -9,6 +9,7 @@ class StateText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 40,
       margin: const EdgeInsets.symmetric(horizontal: 36),
       child: Text(
         complete

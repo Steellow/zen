@@ -6,11 +6,12 @@ class MeditationTimePicker extends StatefulWidget {
   final Function(double) onChanged;
   final String label;
 
-  const MeditationTimePicker(
-      {super.key,
-      required this.value,
-      required this.onChanged,
-      required this.label});
+  const MeditationTimePicker({
+    super.key,
+    required this.value,
+    required this.onChanged,
+    required this.label,
+  });
 
   @override
   State<MeditationTimePicker> createState() => _MeditationTimePickerState();
