@@ -7,6 +7,7 @@ import 'package:zen_app/util/styles.dart';
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox(BOX_NAME_MEDITATION_TIME);
+  await Hive.openBox(BOX_NAME_QUICK_STATS);
 
   runApp(const MyApp());
 }
