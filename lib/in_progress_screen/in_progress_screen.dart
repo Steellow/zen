@@ -2,10 +2,12 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
-import 'package:zen_app/in_progress_screen/confetti_from_top.dart';
-import 'package:zen_app/in_progress_screen/countdown_timer.dart';
-import 'package:zen_app/in_progress_screen/meditation_timer.dart';
-import 'package:zen_app/in_progress_screen/press_to_pause_text.dart';
+import 'package:zen_app/in_progress_screen/widgets/confetti_from_top.dart';
+import 'package:zen_app/in_progress_screen/widgets/countdown_timer.dart';
+import 'package:zen_app/in_progress_screen/widgets/meditation_timer.dart';
+import 'package:zen_app/in_progress_screen/widgets/pause_buttons.dart';
+import 'package:zen_app/in_progress_screen/widgets/press_to_pause_text.dart';
+import 'package:zen_app/in_progress_screen/widgets/state_text.dart';
 import 'package:zen_app/util/hive_helper.dart';
 import 'package:zen_app/util/styles.dart';
 
@@ -19,14 +21,17 @@ class InProgressScreen extends StatefulWidget {
 class _InProgressScreenState extends State<InProgressScreen> {
   // Settings
   final double circleSize = 150;
-  int countdownBeforeMeditation = DateTime.now().millisecondsSinceEpoch + 4000;
+  final double pauseButtonsHeight = 30;
 
-  // Setup
-  bool onGoing = false;
-  bool complete = false;
+  int countdownBeforeMeditation = DateTime.now().millisecondsSinceEpoch + 4000;
   late double meditationTime;
 
-// Controllers
+  // State
+  bool onGoing = false;
+  bool complete = false;
+  bool paused = false;
+
+  // Controllers
   CountDownController countdownController = CountDownController();
   CountDownController meditationController = CountDownController();
   late ConfettiController confettiController;
@@ -61,71 +66,106 @@ class _InProgressScreenState extends State<InProgressScreen> {
     playSoundEffect();
   }
 
+  void resumeMeditation() {
+    setState(() {
+      paused = false;
+      meditationController.resume();
+    });
+  }
+
+  // Manually finish before time completes!
+  void finishMeditation() {
+    paused = false;
+    completeMeditation();
+  }
+
   void playSoundEffect() =>
       AudioPlayer().play(AssetSource("sound-effect.wav"), volume: 1);
 
+  Future<bool> onWillPop() {
+    if (paused || !onGoing || complete) {
+      return Future<bool>.value(true);
+    }
+
+    setState(() {
+      paused = true;
+      meditationController.pause();
+    });
+
+    return Future<bool>.value(false);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Styles.buttonColor,
-      body: Stack(
-        children: [
-          SafeArea(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // Empty container to make alignment work
-                  Container(height: 1),
+    return WillPopScope(
+      onWillPop: onWillPop,
+      child: Scaffold(
+        backgroundColor: Styles.buttonColor,
+        body: Stack(
+          children: [
+            SafeArea(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // Empty container to make alignment work
+                    Container(height: 1),
 
-                  // Main content of the screen
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Stack(
-                        children: [
-                          // Meditation timer
-                          MeditationTimer(
-                            size: circleSize,
-                            onComplete: completeMeditation,
-                            controller: meditationController,
-                            onGoing: onGoing,
-                            time: meditationTime,
-                          ),
+                    // Container with same height as pause buttons
+                    SizedBox(height: pauseButtonsHeight),
 
-                          // Using the same CircularCountDownTimer to count down when meditation starts.
-                          // No circle is shown here, but it asserts it's the same size & styling.
-                          // Also keeps everything simple.
+                    // Main content of the screen
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Stack(
+                          children: [
+                            // Meditation timer
+                            MeditationTimer(
+                              size: circleSize,
+                              onComplete: completeMeditation,
+                              controller: meditationController,
+                              onGoing: onGoing,
+                              time: meditationTime,
+                            ),
 
-                          // Countdown timer
-                          CountdownTimer(
-                            size: circleSize,
-                            controller: countdownController,
-                            onComplete: startMeditation,
-                            onGoing: onGoing,
-                          ),
-                        ],
-                      ),
-                      Container(height: 20),
-                      Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 36),
-                        child: Text(
-                          complete
-                              ? "Great job! 🥳\nYou can continue meditating if you feel like it."
-                              : 'Now power off the screen and chill ${onGoing ? "😌" : "🙂"}',
-                          textAlign: TextAlign.center,
+                            // Using the same CircularCountDownTimer to count down when meditation starts.
+                            // No circle is shown here, but it asserts it's the same size & styling.
+                            // Also keeps everything simple.
+
+                            // Countdown timer
+                            CountdownTimer(
+                              size: circleSize,
+                              controller: countdownController,
+                              onComplete: startMeditation,
+                              onGoing: onGoing,
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
-                  ),
+                        Container(height: 20),
+                        StateText(complete: complete, onGoing: onGoing),
+                      ],
+                    ),
 
-                  const PressToPauseText(),
-                ],
+                    SizedBox(
+                      height: pauseButtonsHeight,
+                      child: PauseButtons(
+                        paused: paused,
+                        onResume: resumeMeditation,
+                        onFinish: finishMeditation,
+                      ),
+                    ),
+
+                    PressToPauseText(
+                      visible: !complete,
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          ConfettiFromTop(confettiController: confettiController),
-        ],
+            ConfettiFromTop(confettiController: confettiController),
+          ],
+        ),
       ),
     );
   }
