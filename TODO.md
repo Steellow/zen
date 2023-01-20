@@ -2,4 +2,4 @@
 - Intro screens
 - Makes settings actually work
 - Better app name
-- launch in gPlay tile fix
+- launch in gPlay link fix

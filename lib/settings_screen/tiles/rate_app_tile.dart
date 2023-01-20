@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zen_app/common_widgets/center_icon.dart';
+import 'package:zen_app/util/util.dart';
 
 class RateAppTile extends StatelessWidget {
   const RateAppTile({super.key});
@@ -8,7 +9,7 @@ class RateAppTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        // LaunchReview.launch() TODO
+        openUrl(context, "TODO");
       },
       leading: const CenterIcon(icon: Icon(Icons.star)),
       title: const Text("Rate app"),
