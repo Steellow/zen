@@ -1,5 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zen_app">
+
+    <queries>
+
+        <!-- For opening GitHub page -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+
+    </queries>
+
    <application
         android:label="zen_app"
         android:name="${applicationName}"

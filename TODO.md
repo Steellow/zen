@@ -1,3 +1,5 @@
 - Color scheme kondikseen!
 - Intro screens
 - Makes settings actually work
+- Better app name
+- launch in gPlay tile fix
