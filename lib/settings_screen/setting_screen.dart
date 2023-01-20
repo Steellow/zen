@@ -19,7 +19,7 @@ class SettingsScreen extends StatelessWidget {
         children: const [
           SettingsSubtitle(text: "Stats"),
           TotalTimeTile(),
-          TimesMeditadetTile(),
+          TimesMeditatedTile(),
           AverageLengthTile(),
           //
           SettingsSubtitle(text: "Settings"),

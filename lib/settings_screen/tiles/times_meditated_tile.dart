@@ -3,8 +3,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:zen_app/common_widgets/center_icon.dart';
 import 'package:zen_app/util/hive_helper.dart';
 
-class TimesMeditadetTile extends StatelessWidget {
-  const TimesMeditadetTile({super.key});
+class TimesMeditatedTile extends StatelessWidget {
+  const TimesMeditatedTile({super.key});
 
   @override
   Widget build(BuildContext context) {
