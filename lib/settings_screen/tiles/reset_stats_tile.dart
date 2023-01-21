@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zen_app/common_widgets/center_icon.dart';
 import 'package:zen_app/util/hive_helper.dart';
+import 'package:zen_app/util/util.dart';
 
 class ResetStatsTile extends StatelessWidget {
   const ResetStatsTile({super.key});
@@ -29,11 +30,7 @@ _showConfirmationDialog(BuildContext context) => showDialog(
           TextButton(
             onPressed: () {
               deleteStats();
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text("All stats deleted"),
-                ),
-              );
+              showSnackBar(context, "All stats deleted");
               Navigator.of(context).popUntil((route) => route.isFirst);
             },
             child: const Text("OK"),

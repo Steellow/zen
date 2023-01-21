@@ -1,8 +1,7 @@
 - launch in gPlay link fix
-- Register full stats
-- Alert if audio is 0
 - app icon
 - Fix icons on front page
   - Margins & correct bg color
 - Intro screen functional (continue & save)
 - Intro screen interactive buttons
+- Fix volume warning warnings

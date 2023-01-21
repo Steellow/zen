@@ -2,6 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
+import 'package:perfect_volume_control/perfect_volume_control.dart';
 import 'package:zen_app/in_progress_screen/widgets/confetti_from_top.dart';
 import 'package:zen_app/in_progress_screen/widgets/countdown_timer.dart';
 import 'package:zen_app/in_progress_screen/widgets/meditation_timer.dart';
@@ -10,6 +11,7 @@ import 'package:zen_app/in_progress_screen/widgets/press_to_pause_text.dart';
 import 'package:zen_app/in_progress_screen/widgets/state_text.dart';
 import 'package:zen_app/util/hive_helper.dart';
 import 'package:zen_app/util/styles.dart';
+import 'package:zen_app/util/util.dart';
 
 class InProgressScreen extends StatefulWidget {
   const InProgressScreen({super.key});
@@ -23,9 +25,10 @@ class _InProgressScreenState extends State<InProgressScreen> {
   final double circleSize = 150;
   final double pauseButtonsHeight = 30;
   final bool confettiEnabled = isConfettiEnabled();
+  final double meditationTime = getMeditationTimeInSeconds();
 
-  int countdownBeforeMeditation = DateTime.now().millisecondsSinceEpoch + 4000;
-  late double meditationTime;
+  final int countdownBeforeMeditation =
+      DateTime.now().millisecondsSinceEpoch + 4000;
 
   // State
   bool hasStarted = false;
@@ -39,10 +42,12 @@ class _InProgressScreenState extends State<InProgressScreen> {
 
   @override
   void initState() {
-    meditationTime = getMeditationTimeInSeconds();
     confettiController = ConfettiController(
       duration: const Duration(minutes: 1),
     );
+
+    volumeWarningMessage();
+
     super.initState();
   }
 
@@ -50,6 +55,13 @@ class _InProgressScreenState extends State<InProgressScreen> {
   void dispose() {
     confettiController.dispose();
     super.dispose();
+  }
+
+  void volumeWarningMessage() async {
+    double volume = await PerfectVolumeControl.getVolume();
+    if (volume < 0.01) {
+      showSnackBar(context, "WARNING\nYour device volume is muted!");
+    }
   }
 
   void startMeditation() {
