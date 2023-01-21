@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:zen_app/home_screen/home_screen.dart';
+import 'package:zen_app/intro_screen/intro_screen.dart';
 import 'package:zen_app/util/hive_helper.dart';
 import 'package:zen_app/util/styles.dart';
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'zen',
       theme: Styles.myThemeData,
-      home: const HomeScreen(),
+      home: const IntroScreen(),
     );
   }
 }

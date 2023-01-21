@@ -49,9 +49,6 @@ abstract class Styles {
     primaryColor: buttonColor,
     toggleableActiveColor: buttonColor,
     brightness: Brightness.dark,
-    textTheme: const TextTheme(
-      bodyText2: basicText,
-    ),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: buttonColor,
