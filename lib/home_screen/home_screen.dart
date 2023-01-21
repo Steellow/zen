@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zen_app/home_screen/hello_text.dart';
 import 'package:zen_app/home_screen/widgets/custom_fab.dart';
+import 'package:zen_app/home_screen/widgets/home_screen_image.dart';
 import 'package:zen_app/home_screen/widgets/meditation_time_text.dart';
 import 'package:zen_app/select_meditation_time_dialog/meditation_time_select_dialog.dart';
 import 'package:zen_app/settings_screen/setting_screen.dart';
@@ -35,15 +36,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 42,
-                right: 42,
-                bottom: 42,
-                top: 22,
-              ),
-              child: Image.asset('assets/meditation-girl.png'),
-            ),
+            const HomeScreenImage(),
             const HelloText(),
             Container(height: 6),
             const MeditationTimeText(),

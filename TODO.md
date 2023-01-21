@@ -1,6 +1,6 @@
 - Color scheme kondikseen!
 - Intro screens
-- Makes settings actually work
-- Better app name
 - launch in gPlay link fix
 - Register full stats
+- Alert if audio is 0
+- app icon

@@ -22,7 +22,7 @@ abstract class Styles {
     shadows: [smallTextShadow],
   );
 
-  static const TextStyle numberPickerTextStyle = TextStyle(
+  static TextStyle numberPickerTextStyle = TextStyle(
     color: buttonColor,
     fontSize: 30,
   );
@@ -46,11 +46,18 @@ abstract class Styles {
   );
 
   static ThemeData myThemeData = ThemeData(
+    primaryColor: buttonColor,
+    toggleableActiveColor: buttonColor,
     brightness: Brightness.dark,
     textTheme: const TextTheme(
       bodyText2: basicText,
     ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        foregroundColor: buttonColor,
+      ),
+    ),
   );
 
-  static const Color buttonColor = Color(0xff5CBBD7);
+  static Color buttonColor = Colors.blue[300]!;
 }
