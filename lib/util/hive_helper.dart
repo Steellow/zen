@@ -32,3 +32,11 @@ const String BOX_NAME_QUICK_STATS = "quickStatsBox";
 
 const String BOX_KEY_TOTAL_SECONDS_MEDITATED = "totalSecondsMeditated";
 const String BOX_KEY_TOTAL_TIMES_MEDITATED = "totalTimesMeditated";
+
+//////////////////
+// SETTINGS BOX //
+//////////////////
+
+const String BOX_NAME_SETTINGS = "settingsBox";
+
+const String BOX_KEY_CONFETTI_ENABLED = "confettiEnabled";

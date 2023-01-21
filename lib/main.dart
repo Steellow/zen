@@ -8,6 +8,7 @@ void main() async {
   await Hive.initFlutter();
   await Hive.openBox(BOX_NAME_MEDITATION_TIME);
   await Hive.openBox(BOX_NAME_QUICK_STATS);
+  await Hive.openBox(BOX_NAME_SETTINGS);
 
   runApp(const MyApp());
 }
