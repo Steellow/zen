@@ -40,3 +40,9 @@ const String BOX_KEY_TOTAL_TIMES_MEDITATED = "totalTimesMeditated";
 const String BOX_NAME_SETTINGS = "settingsBox";
 
 const String BOX_KEY_CONFETTI_ENABLED = "confettiEnabled";
+
+bool isConfettiEnabled() => Hive.box(BOX_NAME_SETTINGS)
+    .get(BOX_KEY_CONFETTI_ENABLED, defaultValue: true);
+
+void setConfettiEnabled(bool value) =>
+    Hive.box(BOX_NAME_SETTINGS).put(BOX_KEY_CONFETTI_ENABLED, value);

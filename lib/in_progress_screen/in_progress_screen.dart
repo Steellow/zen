@@ -22,6 +22,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
   // Settings
   final double circleSize = 150;
   final double pauseButtonsHeight = 30;
+  final bool confettiEnabled = isConfettiEnabled();
 
   int countdownBeforeMeditation = DateTime.now().millisecondsSinceEpoch + 4000;
   late double meditationTime;
@@ -61,7 +62,9 @@ class _InProgressScreenState extends State<InProgressScreen> {
   void completeMeditation() {
     setState(() {
       complete = true;
-      confettiController.play();
+      if (confettiEnabled) {
+        confettiController.play();
+      }
     });
     playSoundEffect();
   }
