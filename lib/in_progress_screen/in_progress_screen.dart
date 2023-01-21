@@ -67,6 +67,13 @@ class _InProgressScreenState extends State<InProgressScreen> {
       }
     });
     playSoundEffect();
+
+    String? secondsMeditated = meditationController.getTime();
+    if (secondsMeditated == null || int.parse(secondsMeditated) < 60) {
+      print("Meditated under 60 seconds, not registering meditation");
+    } else {
+      addMeditation(int.parse(secondsMeditated));
+    }
   }
 
   void resumeMeditation() {

@@ -3,3 +3,4 @@
 - Makes settings actually work
 - Better app name
 - launch in gPlay link fix
+- Register full stats

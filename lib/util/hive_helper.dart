@@ -33,6 +33,21 @@ const String BOX_NAME_QUICK_STATS = "quickStatsBox";
 const String BOX_KEY_TOTAL_SECONDS_MEDITATED = "totalSecondsMeditated";
 const String BOX_KEY_TOTAL_TIMES_MEDITATED = "totalTimesMeditated";
 
+int getTotalSecondsMeditated() => Hive.box(BOX_NAME_QUICK_STATS)
+    .get(BOX_KEY_TOTAL_SECONDS_MEDITATED, defaultValue: 0);
+
+int getTotalTimesMeditated() => Hive.box(BOX_NAME_QUICK_STATS)
+    .get(BOX_KEY_TOTAL_TIMES_MEDITATED, defaultValue: 0);
+
+void addMeditation(int seconds) {
+  int currentSeconds = getTotalSecondsMeditated();
+  int currentTimes = getTotalTimesMeditated();
+
+  Box box = Hive.box(BOX_NAME_QUICK_STATS);
+  box.put(BOX_KEY_TOTAL_SECONDS_MEDITATED, currentSeconds + seconds);
+  box.put(BOX_KEY_TOTAL_TIMES_MEDITATED, currentTimes + 1);
+}
+
 //////////////////
 // SETTINGS BOX //
 //////////////////

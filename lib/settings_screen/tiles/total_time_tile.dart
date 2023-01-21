@@ -8,7 +8,9 @@ String getTimeMeditatedAsString(int seconds) {
   int hours = totalMinutes ~/ 60;
   int leftoverMinutes = totalMinutes % 60;
 
-  if (totalMinutes < 60) {
+  if (seconds < 60) {
+    return "$seconds seconds";
+  } else if (totalMinutes < 60) {
     return '$totalMinutes minutes';
   } else if (totalMinutes < 600) {
     return '$hours ${hours > 1 ? "hours" : "hour"}${leftoverMinutes > 0 ? ' $leftoverMinutes minutes' : ""}';
