@@ -48,6 +48,8 @@ void addMeditation(int seconds) {
   box.put(BOX_KEY_TOTAL_TIMES_MEDITATED, currentTimes + 1);
 }
 
+void deleteStats() => Hive.box(BOX_NAME_QUICK_STATS).clear();
+
 //////////////////
 // SETTINGS BOX //
 //////////////////
