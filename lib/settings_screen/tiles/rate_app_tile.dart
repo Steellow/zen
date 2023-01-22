@@ -9,7 +9,8 @@ class RateAppTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        openUrl(context, "TODO");
+        openUrl(context,
+            "https://play.google.com/store/apps/details?id=labs.ankia.zen");
       },
       leading: const CenterIcon(icon: Icon(Icons.star)),
       title: const Text("Rate app"),

@@ -1,3 +1,1 @@
-- launch in gPlay link fix
 - app icon
-- Fix volume warning warnings
