@@ -13,7 +13,7 @@
     </queries>
 
    <application
-        android:label="zen_app"
+        android:label="zen"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
