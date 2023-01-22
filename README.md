@@ -2,6 +2,13 @@
 
 Mobile app for meditation. You can set min and max time, and when you start meditating the app randomly picks a time for you between those values. The point is to... I'm not even sure I just though it'd be cool to have a little variance each time.
 
+## Features
+
+- Set min and max time. Each session meditation time is picked between those values.
+- Satisfying jingle when completing a meditation. Doesn't keep ringing so you can continue meditation if you want.
+- See basic stats: How many sessions, total time meditated and your average session length.
+- Open source and lightweight
+
 ## Hive
 
 All data is stored with [Hive](https://pub.dev/packages/hive), in multiple different boxes. Check `hive_helper.dart` for more info.
