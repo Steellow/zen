@@ -1,7 +1,3 @@
 - launch in gPlay link fix
 - app icon
-- Fix icons on front page
-  - Margins & correct bg color
-- Intro screen functional (continue & save)
-- Intro screen interactive buttons
 - Fix volume warning warnings

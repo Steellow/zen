@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -27,3 +28,6 @@ void showSnackBar(BuildContext context, String message) =>
         content: Text(message),
       ),
     );
+
+void playSoundEffect() =>
+    AudioPlayer().play(AssetSource("sound-effect.wav"), volume: 1);

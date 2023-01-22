@@ -8,7 +8,11 @@ class DescriptionText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 24, right: 24, top: 24),
+      margin: const EdgeInsets.only(
+        left: 24,
+        right: 24,
+        top: 12,
+      ),
       child: Text(
         text,
         style: const TextStyle(height: 1.23),

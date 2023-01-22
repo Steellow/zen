@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
@@ -60,6 +59,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
   void volumeWarningMessage() async {
     double volume = await PerfectVolumeControl.getVolume();
     if (volume < 0.01) {
+      // ignore: use_build_context_synchronously
       showSnackBar(context, "WARNING\nYour device volume is muted!");
     }
   }
@@ -100,9 +100,6 @@ class _InProgressScreenState extends State<InProgressScreen> {
     paused = false;
     completeMeditation();
   }
-
-  void playSoundEffect() =>
-      AudioPlayer().play(AssetSource("sound-effect.wav"), volume: 1);
 
   Future<bool> onWillPop() {
     if (paused || !hasStarted || complete) {
