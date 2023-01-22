@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:zen/home_screen/home_screen.dart';
 import 'package:zen/intro_screen/intro_screen.dart';
@@ -19,11 +20,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'zen',
-      theme: Styles.myThemeData,
-      home: isFirstLaunch() ? const IntroScreen() : const HomeScreen(),
+    return ScreenUtilInit(
+      minTextAdapt: true,
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'zen',
+          theme: ThemeData(
+            primaryColor: Styles.buttonColor,
+            toggleableActiveColor: Styles.buttonColor,
+            brightness: Brightness.dark,
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                foregroundColor: Styles.buttonColor,
+              ),
+            ),
+            textTheme: Typography.englishLike2021.apply(fontSizeFactor: 1.sp),
+          ),
+          home: isFirstLaunch() ? const IntroScreen() : const HomeScreen(),
+        );
+      },
     );
   }
 }

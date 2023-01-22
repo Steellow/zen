@@ -8,29 +8,32 @@ class CustomFAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OpenContainer(
-      closedBuilder: (BuildContext ctx, VoidCallback openContainer) {
-        // Animation doesn't look smooth with FloatingActionButton widget
-        return const SizedBox(
-          height: 50,
-          width: 180,
-          child: Center(
-            child: Text(
-              "MEDITATE",
-              style: Styles.floatingButtonTextStyle,
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      child: OpenContainer(
+        closedBuilder: (BuildContext ctx, VoidCallback openContainer) {
+          // Animation doesn't look smooth with FloatingActionButton widget
+          return const SizedBox(
+            height: 50,
+            width: 180,
+            child: Center(
+              child: Text(
+                "MEDITATE",
+                style: Styles.floatingButtonTextStyle,
+              ),
             ),
-          ),
-        );
-      },
-      closedShape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(99),
+          );
+        },
+        closedShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(99),
+        ),
+        closedColor: Styles.buttonColor,
+        openColor: Styles.buttonColor,
+        closedElevation: 6,
+        openBuilder: (BuildContext ctx, VoidCallback _) {
+          return const InProgressScreen();
+        },
       ),
-      closedColor: Styles.buttonColor,
-      openColor: Styles.buttonColor,
-      closedElevation: 6,
-      openBuilder: (BuildContext ctx, VoidCallback _) {
-        return const InProgressScreen();
-      },
     );
   }
 }

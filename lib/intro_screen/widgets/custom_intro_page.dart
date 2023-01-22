@@ -5,6 +5,8 @@ import 'package:zen/util/styles.dart';
 
 class CustomIntroPage extends StatelessWidget {
   final String imagePath;
+  final double imagePadding;
+  final bool noHorizontalPadding;
   final String title;
   final String description;
   final Widget? button;
@@ -12,6 +14,8 @@ class CustomIntroPage extends StatelessWidget {
   const CustomIntroPage(
       {super.key,
       required this.imagePath,
+      required this.imagePadding,
+      this.noHorizontalPadding = false,
       required this.title,
       required this.description,
       this.button});
@@ -22,7 +26,8 @@ class CustomIntroPage extends StatelessWidget {
       children: [
         IntroImage(
           image: imagePath,
-          padding: 34,
+          padding: imagePadding,
+          noHorizontalPadding: noHorizontalPadding,
         ),
         Text(
           title,

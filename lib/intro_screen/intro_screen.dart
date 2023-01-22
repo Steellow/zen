@@ -27,12 +27,14 @@ class IntroScreen extends StatelessWidget {
           rawPages: [
             const CustomIntroPage(
               imagePath: "assets/intro-page-1.png",
+              imagePadding: 30,
               title: "zen",
               description:
                   "This is a lightweight and open source meditation app with nothing unnecessary.",
             ),
             CustomIntroPage(
               imagePath: "assets/intro-page-2.png",
+              imagePadding: 40,
               title: "Random time",
               description:
                   "You can set minimum and maximum time, and each session your time is picked randomly between those values. This way you have a little variance each time which keeps meditation fresh and fun.",
@@ -43,6 +45,8 @@ class IntroScreen extends StatelessWidget {
             ),
             CustomIntroPage(
               imagePath: "assets/intro-page-3.png",
+              imagePadding: 20,
+              noHorizontalPadding: true,
               title: "Continue meditation",
               description:
                   "Unlike your alarm clock, the sound effect when completing a meditation won't keep going until you dismiss it. You can continue your session effortlessly after the beep.",

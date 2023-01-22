@@ -45,16 +45,5 @@ abstract class Styles {
     color: Colors.black54,
   );
 
-  static ThemeData myThemeData = ThemeData(
-    primaryColor: buttonColor,
-    toggleableActiveColor: buttonColor,
-    brightness: Brightness.dark,
-    textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(
-        foregroundColor: buttonColor,
-      ),
-    ),
-  );
-
   static Color buttonColor = Colors.blue[300]!;
 }

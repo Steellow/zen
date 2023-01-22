@@ -22,7 +22,7 @@ class InProgressScreen extends StatefulWidget {
 class _InProgressScreenState extends State<InProgressScreen> {
   // Settings
   final double circleSize = 150;
-  final double pauseButtonsHeight = 30;
+  final double pauseButtonsHeight = 50;
   final bool confettiEnabled = isConfettiEnabled();
   final double meditationTime = getMeditationTimeInSeconds();
 
