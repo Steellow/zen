@@ -57,9 +57,16 @@ void deleteStats() => Hive.box(BOX_NAME_QUICK_STATS).clear();
 const String BOX_NAME_SETTINGS = "settingsBox";
 
 const String BOX_KEY_CONFETTI_ENABLED = "confettiEnabled";
+const String BOX_KEY_FIRST_LAUNCH = "firstTimeAppLaunch";
 
 bool isConfettiEnabled() => Hive.box(BOX_NAME_SETTINGS)
     .get(BOX_KEY_CONFETTI_ENABLED, defaultValue: true);
 
 void setConfettiEnabled(bool value) =>
     Hive.box(BOX_NAME_SETTINGS).put(BOX_KEY_CONFETTI_ENABLED, value);
+
+bool isFirstLaunch() =>
+    Hive.box(BOX_NAME_SETTINGS).get(BOX_KEY_FIRST_LAUNCH, defaultValue: true);
+
+void setFirstLaunch(bool value) =>
+    Hive.box(BOX_NAME_SETTINGS).put(BOX_KEY_FIRST_LAUNCH, value);

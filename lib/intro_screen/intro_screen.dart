@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:zen_app/home_screen/home_screen.dart';
 import 'package:zen_app/intro_screen/widgets/description_text.dart';
 import 'package:zen_app/intro_screen/widgets/intro_image.dart';
+import 'package:zen_app/util/hive_helper.dart';
 import 'package:zen_app/util/styles.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});
 
+  void _navigateToMainScreen(BuildContext context) {
+    setFirstLaunch(false);
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Styles.buttonColor,
       body: SafeArea(
         child: IntroductionScreen(
-          // globalBackgroundColor: Styles.buttonColor,
+          animationDuration: 200,
           rawPages: [
             Column(
               children: [
@@ -69,12 +79,8 @@ class IntroScreen extends StatelessWidget {
           skip: const Text("Skip"),
           next: const Text("Next"),
           done: const Text("Let's go!"),
-          onDone: () {
-            print("LMAO");
-          },
-          onSkip: () {
-            print("LMAO");
-          },
+          onDone: () => _navigateToMainScreen(context),
+          onSkip: () => _navigateToMainScreen(context),
         ),
       ),
     );
