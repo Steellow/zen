@@ -2,15 +2,15 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:perfect_volume_control/perfect_volume_control.dart';
-import 'package:zen_app/in_progress_screen/widgets/confetti_from_top.dart';
-import 'package:zen_app/in_progress_screen/widgets/countdown_timer.dart';
-import 'package:zen_app/in_progress_screen/widgets/meditation_timer.dart';
-import 'package:zen_app/in_progress_screen/widgets/pause_buttons.dart';
-import 'package:zen_app/in_progress_screen/widgets/press_to_pause_text.dart';
-import 'package:zen_app/in_progress_screen/widgets/state_text.dart';
-import 'package:zen_app/util/hive_helper.dart';
-import 'package:zen_app/util/styles.dart';
-import 'package:zen_app/util/util.dart';
+import 'package:zen/in_progress_screen/widgets/confetti_from_top.dart';
+import 'package:zen/in_progress_screen/widgets/countdown_timer.dart';
+import 'package:zen/in_progress_screen/widgets/meditation_timer.dart';
+import 'package:zen/in_progress_screen/widgets/pause_buttons.dart';
+import 'package:zen/in_progress_screen/widgets/press_to_pause_text.dart';
+import 'package:zen/in_progress_screen/widgets/state_text.dart';
+import 'package:zen/util/hive_helper.dart';
+import 'package:zen/util/styles.dart';
+import 'package:zen/util/util.dart';
 
 class InProgressScreen extends StatefulWidget {
   const InProgressScreen({super.key});

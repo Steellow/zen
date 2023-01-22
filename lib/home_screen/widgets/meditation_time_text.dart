@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:zen_app/util/hive_helper.dart';
+import 'package:zen/util/hive_helper.dart';
 
 class MeditationTimeText extends StatelessWidget {
   const MeditationTimeText({super.key});

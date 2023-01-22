@@ -1,6 +1,6 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-import 'package:zen_app/util/styles.dart';
+import 'package:zen/util/styles.dart';
 
 class MeditationTimer extends StatelessWidget {
   final double size;

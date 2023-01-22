@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:zen_app/select_meditation_time_dialog/meditation_time_picker.dart';
-import 'package:zen_app/util/hive_helper.dart';
+import 'package:zen/select_meditation_time_dialog/meditation_time_picker.dart';
+import 'package:zen/util/hive_helper.dart';
 
 Future<void> showMeditationTimeSelectDialog(BuildContext context) async {
   return showDialog(

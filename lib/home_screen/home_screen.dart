@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:zen_app/home_screen/hello_text.dart';
-import 'package:zen_app/home_screen/widgets/custom_fab.dart';
-import 'package:zen_app/home_screen/widgets/home_screen_image.dart';
-import 'package:zen_app/home_screen/widgets/meditation_time_text.dart';
-import 'package:zen_app/select_meditation_time_dialog/meditation_time_select_dialog.dart';
-import 'package:zen_app/settings_screen/setting_screen.dart';
-import 'package:zen_app/util/slide_from_left_route.dart';
+import 'package:zen/home_screen/hello_text.dart';
+import 'package:zen/home_screen/widgets/custom_fab.dart';
+import 'package:zen/home_screen/widgets/home_screen_image.dart';
+import 'package:zen/home_screen/widgets/meditation_time_text.dart';
+import 'package:zen/select_meditation_time_dialog/meditation_time_select_dialog.dart';
+import 'package:zen/settings_screen/setting_screen.dart';
+import 'package:zen/util/slide_from_left_route.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

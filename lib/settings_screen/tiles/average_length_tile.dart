@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:zen_app/common_widgets/center_icon.dart';
-import 'package:zen_app/util/hive_helper.dart';
+import 'package:zen/common_widgets/center_icon.dart';
+import 'package:zen/util/hive_helper.dart';
 
 class AverageLengthTile extends StatelessWidget {
   const AverageLengthTile({super.key});

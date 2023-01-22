@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:zen_app/common_widgets/center_icon.dart';
-import 'package:zen_app/select_meditation_time_dialog/meditation_time_select_dialog.dart';
-import 'package:zen_app/util/hive_helper.dart';
+import 'package:zen/common_widgets/center_icon.dart';
+import 'package:zen/select_meditation_time_dialog/meditation_time_select_dialog.dart';
+import 'package:zen/util/hive_helper.dart';
 
 class MeditationTimeTile extends StatelessWidget {
   const MeditationTimeTile({super.key});

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:zen_app/home_screen/home_screen.dart';
-import 'package:zen_app/intro_screen/widgets/custom_intro_page.dart';
-import 'package:zen_app/select_meditation_time_dialog/meditation_time_select_dialog.dart';
-import 'package:zen_app/util/hive_helper.dart';
-import 'package:zen_app/util/util.dart';
+import 'package:zen/intro_screen/widgets/custom_intro_page.dart';
+import 'package:zen/home_screen/home_screen.dart';
+import 'package:zen/select_meditation_time_dialog/meditation_time_select_dialog.dart';
+import 'package:zen/util/hive_helper.dart';
+import 'package:zen/util/util.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});
@@ -29,7 +29,7 @@ class IntroScreen extends StatelessWidget {
               imagePath: "assets/intro-page-1.png",
               title: "zen",
               description:
-                  "This is an lightweight and open source meditation app with nothing unecessary.",
+                  "This is a lightweight and open source meditation app with nothing unnecessary.",
             ),
             CustomIntroPage(
               imagePath: "assets/intro-page-2.png",
@@ -38,14 +38,14 @@ class IntroScreen extends StatelessWidget {
                   "You can set minimum and maximum time, and each session your time is picked randomly between those values. This way you have a little variance each time which keeps meditation fresh and fun.",
               button: ElevatedButton(
                 onPressed: () => showMeditationTimeSelectDialog(context),
-                child: const Text("Set time"),
+                child: const Text("Set times"),
               ),
             ),
             CustomIntroPage(
               imagePath: "assets/intro-page-3.png",
               title: "Continue meditation",
               description:
-                  "Unlike your alarm clock, the sound effect when completing a meditation won't keep going until you dismiss it. You can continue your session effortlessy after the beep.",
+                  "Unlike your alarm clock, the sound effect when completing a meditation won't keep going until you dismiss it. You can continue your session effortlessly after the beep.",
               button: ElevatedButton.icon(
                 onPressed: () => playSoundEffect(),
                 label: const Text("Try it out"),

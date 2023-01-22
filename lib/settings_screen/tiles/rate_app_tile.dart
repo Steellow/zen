@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:zen_app/common_widgets/center_icon.dart';
-import 'package:zen_app/util/util.dart';
+import 'package:zen/common_widgets/center_icon.dart';
+import 'package:zen/util/util.dart';
 
 class RateAppTile extends StatelessWidget {
   const RateAppTile({super.key});

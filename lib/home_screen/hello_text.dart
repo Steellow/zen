@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:zen_app/util/styles.dart';
-import 'package:zen_app/util/util.dart';
+import 'package:zen/util/styles.dart';
+import 'package:zen/util/util.dart';
 
 class HelloText extends StatelessWidget {
   const HelloText({super.key});

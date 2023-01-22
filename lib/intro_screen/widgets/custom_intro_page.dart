@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:zen_app/intro_screen/widgets/description_text.dart';
-import 'package:zen_app/intro_screen/widgets/intro_image.dart';
-import 'package:zen_app/util/styles.dart';
+import 'package:zen/intro_screen/widgets/description_text.dart';
+import 'package:zen/intro_screen/widgets/intro_image.dart';
+import 'package:zen/util/styles.dart';
 
 class CustomIntroPage extends StatelessWidget {
   final String imagePath;

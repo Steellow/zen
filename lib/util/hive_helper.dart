@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names, avoid_print
 
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:zen_app/util/util.dart';
+import 'package:zen/util/util.dart';
 
 /////////////////////////
 // MEDITATION TIME BOX //

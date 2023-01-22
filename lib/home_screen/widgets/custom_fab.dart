@@ -1,7 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:zen_app/in_progress_screen/in_progress_screen.dart';
-import 'package:zen_app/util/styles.dart';
+import 'package:zen/in_progress_screen/in_progress_screen.dart';
+import 'package:zen/util/styles.dart';
 
 class CustomFAB extends StatelessWidget {
   const CustomFAB({super.key});

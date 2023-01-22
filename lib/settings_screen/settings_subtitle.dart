@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zen_app/util/styles.dart';
+import 'package:zen/util/styles.dart';
 
 class SettingsSubtitle extends StatelessWidget {
   final String text;
