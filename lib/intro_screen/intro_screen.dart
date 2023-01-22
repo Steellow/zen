@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:zen_app/intro_screen/description_text.dart';
+import 'package:zen_app/intro_screen/widgets/description_text.dart';
+import 'package:zen_app/intro_screen/widgets/intro_image.dart';
 import 'package:zen_app/util/styles.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -9,12 +10,17 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Styles.buttonColor,
       body: SafeArea(
         child: IntroductionScreen(
+          // globalBackgroundColor: Styles.buttonColor,
           rawPages: [
             Column(
               children: [
-                Image.asset('assets/intro-page-1.png'),
+                const IntroImage(
+                  image: 'assets/intro-page-1.png',
+                  padding: 34,
+                ),
                 Text(
                   "zen",
                   style: Styles.titleText,
@@ -27,7 +33,10 @@ class IntroScreen extends StatelessWidget {
             ),
             Column(
               children: [
-                Image.asset('assets/intro-page-2.png'),
+                const IntroImage(
+                  image: 'assets/intro-page-2.png',
+                  padding: 34,
+                ),
                 Text(
                   "Random meditation time",
                   style: Styles.titleText,
@@ -40,7 +49,10 @@ class IntroScreen extends StatelessWidget {
             ),
             Column(
               children: [
-                Image.asset('assets/intro-page-3.png'),
+                const IntroImage(
+                  image: 'assets/intro-page-3.png',
+                  padding: 24,
+                ),
                 Text(
                   "Continue meditation",
                   style: Styles.titleText,

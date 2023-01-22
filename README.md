@@ -6,3 +6,13 @@ Mobile app for meditation. You can set min and max time, and when you start medi
 
 All data is stored with [Hive](https://pub.dev/packages/hive), in multiple different boxes. Check `hive_helper.dart` for more info.
 
+## Pictures
+
+All pictures are from [unDraw](https://undraw.co/) or [manypixels](https://www.manypixels.co/gallery). All of the unDraw pictures are modified. You can find the original `.svg` files and and `.psd` files inside `/assets-original` directory. Finished edited pictures are inside `/assets` directory.
+
+| Location             | Source     | Picture name    | Modifications                       |
+| -------------------- | ---------- | --------------- | ----------------------------------- |
+| Intro screen, page 1 | unDraw     | Fall            | String color changed, image cropped |
+| Intro screen, page 2 | unDraw     | Time Management | Girl removed from the picture       |
+| Intro screen, page 3 | unDraw     | Accept Terms    | Girl removed from the picture       |
+| Home screen          | manypixels | Meditation      | None                                |
