@@ -2,6 +2,13 @@
 
 Mobile app for meditation. You can set min and max time, and when you start meditating the app randomly picks a time for you between those values. The point is to... I'm not even sure I just though it'd be cool to have a little variance each time.
 
+<p float="left">
+  <img src="./screenshots/intro.png" width="150" />
+  <img src="./screenshots/main.png" width="150" /> 
+  <img src="./screenshots/in-progress.png" width="150" />
+</p>
+
+
 ## Features
 
 - Set min and max time. Each session meditation time is picked between those values.
