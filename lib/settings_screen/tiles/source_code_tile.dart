@@ -9,7 +9,7 @@ class SourceCodeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        openUrl(context, 'https://github.com/Steellow/zen_app');
+        openUrl(context, 'https://github.com/Steellow/zen');
       },
       leading: const CenterIcon(icon: Icon(Icons.code)),
       title: const Text("Source code"),
