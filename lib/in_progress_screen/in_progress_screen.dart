@@ -11,6 +11,7 @@ import 'package:zen/in_progress_screen/widgets/state_text.dart';
 import 'package:zen/util/hive_helper.dart';
 import 'package:zen/util/styles.dart';
 import 'package:zen/util/util.dart';
+import 'package:wakelock/wakelock.dart';
 
 class InProgressScreen extends StatefulWidget {
   const InProgressScreen({super.key});
@@ -68,6 +69,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
     setState(() {
       hasStarted = true;
       meditationController.start();
+      Wakelock.enable();
     });
   }
 
@@ -79,6 +81,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
       }
     });
     playSoundEffect();
+    Wakelock.disable();
 
     String? secondsMeditated = meditationController.getTime();
     if (secondsMeditated == null || int.parse(secondsMeditated) < 60) {
@@ -103,6 +106,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
 
   Future<bool> onWillPop() {
     if (paused || !hasStarted || complete) {
+      Wakelock.disable();
       return Future<bool>.value(true);
     }
 

@@ -12,7 +12,7 @@ class TimesMeditatedTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {},
+      onTap: () {}, // Empty onTap function for ripple animation
       leading: const CenterIcon(icon: Icon(Icons.remove_red_eye)),
       title: Text(title),
       subtitle: const Text("Times you've closed your eyes"),
